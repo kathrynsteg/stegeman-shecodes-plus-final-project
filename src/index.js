@@ -52,7 +52,35 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+searchCity("Amsterdam");
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+                <div class="weather-forecast-day">
+                    <div class="weather-forecast-date">${day}</div>
+                    <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
+                    alt=""
+                    width="42"
+                    />
+                    <div class="weather-forecast-temperatures">
+                    <span class="forecast-high">°C</span>
+                    <span class="forecast-low">°C</span>
+                    </div>
+                </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Amsterdam");
+displayForecast();
