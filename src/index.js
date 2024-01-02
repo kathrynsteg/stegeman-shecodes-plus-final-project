@@ -73,6 +73,7 @@ function displayForecast(response) {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
+  console.log(response);
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
       forecastHtml =
@@ -104,4 +105,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Amsterdam");
-displayForecast();
