@@ -92,6 +92,7 @@ main {
   margin-top: 20px;
   text-align: center;
   color: #f65282;
+  font-weight: bolder;
 }
 
 .weather-forecast-date {
